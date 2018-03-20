@@ -1,0 +1,38 @@
+nav:
+  home: Anasayfa
+  about: Hakkımda
+  articles: Blog
+  projects: Projeler
+  search: Ara
+
+footer:
+  copyright: Copyright
+
+index:
+  find_me_on: Ulaşım adresleri
+  enum_comma: ','
+  enum_and: ve
+  articles: Blog
+  projects: Projeler
+
+post:
+  desktop:
+    previous: Önceki yazı
+    next: Sonraki yazı
+    back_to_top: Yukarı çık
+    share: Paylaş
+  mobile:
+    menu: Menü
+    toc: TOC
+    back_to_top: Üst
+    share: Paylaş
+
+search:
+  search: Ara...
+  no_results: Sonuç bulunamadı.
+
+pagination:
+  page: Sayfa %d / %d
+
+comments:
+  no_js: Please enable JavaScript to view the comments.
