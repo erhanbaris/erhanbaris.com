@@ -20,3 +20,5 @@ Stack ve register tabanlı sanal makinelerin farklarını kısaca özetlersek;
 1. Stack yapısını oluşturmak ve anlamak yazılımcı için daha kolaydır. Register tabanlı sistemlerde yapıyı kurgulamak daha karmaşıktır.
 2. Performans olarak register yapısı öne çıkmakta. Bunun nedenide daha az opcode üretilerek daha az işlem ile aynı sonuca ulaşılmaktadır.
 3. Register tabanlı sistemde daha az komut kodu vardır.
+
+## DEVAM EDECEK
