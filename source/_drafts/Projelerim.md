@@ -1,4 +1,0 @@
----
-title: Projelerim
-tags:
----

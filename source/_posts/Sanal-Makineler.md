@@ -1,5 +1,6 @@
 ---
 title: Sanal Makineler
+lang: tr
 date: 2018-03-21 10:35:12
 tags:
  - Sanal-Makine
