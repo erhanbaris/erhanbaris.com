@@ -21,7 +21,7 @@ permalink_defaults:
 source_dir: source
 public_dir: public
 tag_dir: tags
-archive_dir: archives
+archive_dir: blog
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
@@ -57,6 +57,7 @@ default_category: genel
 category_map:
   - C++
   - Yazılım
+  - Open-Source
 tag_map:
 
 # Date / Time format
