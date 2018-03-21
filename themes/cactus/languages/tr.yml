@@ -2,7 +2,7 @@ nav:
   home: Anasayfa
   about: Hakkımda
   blog: Blog
-  projects: Projeler
+  projects: Projelerim
   search: Ara
 
 footer:
@@ -13,7 +13,7 @@ index:
   enum_comma: ','
   enum_and: ve
   articles: Blog
-  projects: Projeler
+  projects: Projelerim
 
 post:
   desktop:
