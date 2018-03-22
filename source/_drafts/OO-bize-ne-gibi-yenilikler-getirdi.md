@@ -23,7 +23,7 @@ Bir çok farklı kişi buna farklı cevaplar verebilir. **Objeleri daha iyi yön
 Bu 3 madde şu anda heryerde gözümüze sokulan, sürekli olarak anlatılan ve bize nimetlerinden sürekli olarak bir sihir gibi söz edilen şeyler gerçektende vaat edilkdiği gibi OO diller ile mi birlikte geldi? Bunları sadece OO diller aracılığı ile mi kullanabiliriz? Peki OO diller olmasaydı bunlara ihtiyacımızda olmayacakmıydı?
 
 ## Encapsulation
-En basit anlatımıyla sınıf içerisinde ki bilgilerin diğer kullanıcılar ve yapılardan saklanması ve tam bir yalıtılmışlık sağlama olarak tanımlanabilkir. Dışarıya sadece bir dış erişim metodu(function pointer) yada sınıfı(abstract class) verilerek asıl yapının diğer dış erişimler kapatılarak daha esnek değişiklikler, düzenlemeler yapılmasına imkan vermek için kullanılır.
+En basit anlatımıyla sınıf içerisinde ki bilgilerin diğer kullanıcılar ve yapılardan saklanması ve tam bir yalıtılmışlık sağlama olarak tanımlanabilir. Dışarıya sadece bir erişim metodu(function pointer) yada sınıfı(abstract class) verilerek asıl yapının diğer dış erişimlere kapatılarak daha esnek değişiklikler, düzenlemeler yapılmasına imkan vermek için kullanılır. Kodun düzenlenmesi sonrasında o kodu kullanan diğer bütün yapının tekrardan derlenmesinin önüne geçilerek sadece değişikliğin olduğu kısmın derlenmesini sağlamaktır.
 
 C dili için örnek göstermek gerekirse;
 {% codeblock lang:cpp %}
@@ -113,4 +113,12 @@ int main()
 Hımmm, sanki c ile c++ arasında çok fark yokmuş gibi görünüyor ama aslında bakacak olursanız c++ sınıf tanımlamasında bazı bilgilerin görünür olduğu anlaşılıyor. Bu da kapsüllemeyi bozan şeylerden birisi. Tabi bunu **pimpl** ile önüne geçilebilir ama genede dışarda bazı bilgileri bırakmış oluyor. Kapsülleme bakımından c, c++ oranla daha başarılı. 
 
 Fakat unutmamak lazım c++ içerisinde public, private ve protected tanımlamaları bu sorunu çözmek için oluşturulmuş ve bunlarla soruna belli bir düzeyde çözüme kavuşturabiliyoruz.
-OO dillerin önerdiği kapsülleme zaten uzun bir süreden beri var olan bir özellik.
+OO dillerinin önerdiği kapsülleme zaten uzun bir süreden beri var olan bir özellik.
+
+## Polymorphism
+Kısacası nesnelerin birbiri yerine kullanılabilmesidir. Bunuda Interface yada Abtract sınıflar aracılığı ile yada function pointer ile işlemi yapacak olan metodun değiştirilebilmesidir. OO dil kullananların oldukça aşina olduğu bir durumdur. 
+
+Peki bu işlemi c ile nasıl yapabiliriz?
+
+## Inheritance
+
