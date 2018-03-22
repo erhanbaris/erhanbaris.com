@@ -1,5 +1,5 @@
 ---
-title: Object Oriented bize ne gibi yenilikler getirdi?
+title: Object Oriented Nize Ne Gibi Yenilikler Getirdi?
 lang: tr
 tags:
  - OO
@@ -299,15 +299,18 @@ struct file_operations {
 {% endcodeblock %}
 
 Sonuç gösteriyor ki polymorphism'de c dili için sorun değil. Tabi bunu yapabilmek için değişken tanımlamalarımızı aynı sıra ile ve türlerinin de aynı olması gerekiyor. RAM'da her iki nesnenin değişkenleri aynı sırada ve boyutta(türde) olması gerekiyor.
+Ayrıca c++ arkaplanında buna benzer bir mekanizma kullanmaktadır. Virtual olarak tanımladığınız metodlar vtable isimli bir yerde tutulur ve çağrım yağtığınızda function pointer okunarak çalıştırılır. Yani c++ bu işlemleri sizin yerinize otomatik olarak yapar. Bu da hata yapma ihtimalinizi azaltır.
 
 ## Inheritance
 
-#### HENÜZ YAZILMADI
+#### HENÜZ YAZILMADI. YAZIYORUM.
 
 
 ### Peki bütün bunlar zaten var ise bize ne gibi bir faydası dokundu?
 - Öncelikle daha güvenli bir geliştirme ortamı sağladı. Üst kısımda göstermiş olduğum bir çok şeyde hata yapma riski yüksek ve eğer hata yapılırsa bulunmasıda zor.
 - Yazılım geliştirmeyi daha kolay hale getirdi.
 - Nesneler arasında ki ikişki ve iletişimi daha anlaşılır kıldı.
-- 
+Eminim ki daha bir çok faydası var fakat hepsini sıralamak olanaksız.
+
+OO diller bize vaat ettiği kadar yenilik sunmasada sağlamış olduğu esneklik bile kullanımı için yeterli gibi duruyor.
 
