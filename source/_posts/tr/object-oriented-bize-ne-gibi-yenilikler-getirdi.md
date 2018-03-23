@@ -476,7 +476,7 @@ int main() {
 }
 {% endcodeblock %}
 
-Evet ne kadar çok üzerinde çalışırsak çalışalım tam olarak inheritence mantığını uygulamak kolay olmuyor. Son örneğimizde kapsüllemeden ödün vermek zorunda kaldık. Bu da oldukça önemli bir durum. 
+Evet ne kadar çok üzerinde çalışırsak çalışalım tam olarak inheritance mantığını uygulamak kolay olmuyor. Son örneğimizde kapsüllemeden ödün vermek zorunda kaldık. Bu da oldukça önemli bir durum. 
 
 C++ ilk geliştirildiği zaman makine koduna derleme yapmak yerine C diline çıktı verip, c kodu olarak derlenmekteydi. Tabi o zamanlarda ki C++ ve C şu andakinden oldukça farklıydı. Özellikle C++'ın yetkinlikleri oldukça arttı. 
 
@@ -489,5 +489,5 @@ Eminim ki daha bir çok faydası var fakat hepsini sıralamak olanaksız.
 
 OO diller bize vaat ettiği kadar yenilik sunmasada sağlamış olduğu esneklik bile kullanımı için yeterli. Her ne kadar c dilinin özelliklerinden bol bol bahsetsemde, şu anda projelerimde yoğun olarak c++ ve c# kullanıyorum. Bir yazılımcı olarak ilk tercihim her zaman OO dillerden birisi olacaktır :)
 
-**NOT: örnek kodlar tamamen test amaçlıdır, ondan dolayı memory management yada bug'lar önemsenmemiştir. **
+**NOT: örnek kodlar tamamen test amaçlıdır, memory management yada bug'lar önemsenmemiştir. **
 
