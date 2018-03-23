@@ -487,5 +487,7 @@ C++ ilk geliştirildiği zaman makine koduna derleme yapmak yerine C diline çı
 - Kalıtım sistemini çok daha doğru olarak kullanılmasını sağladı.
 Eminim ki daha bir çok faydası var fakat hepsini sıralamak olanaksız.
 
-OO diller bize vaat ettiği kadar yenilik sunmasada sağlamış olduğu esneklik bile kullanımı için yeterli gibi duruyor. Her ne kadar c dilinin özelliklerinden bol bol bahsetsemde, şu anda projelerimde yoğun olarak c++ ve c# kullanıyorum. Bir yazılımcı olarak ilk tercihim her zaman OO dillerden birisi olacaktır :)
+OO diller bize vaat ettiği kadar yenilik sunmasada sağlamış olduğu esneklik bile kullanımı için yeterli. Her ne kadar c dilinin özelliklerinden bol bol bahsetsemde, şu anda projelerimde yoğun olarak c++ ve c# kullanıyorum. Bir yazılımcı olarak ilk tercihim her zaman OO dillerden birisi olacaktır :)
+
+**NOT: örnek kodlar tamamen test amaçlıdır, ondan dolayı memory management yada bug'lar önemsenmemiştir. **
 
