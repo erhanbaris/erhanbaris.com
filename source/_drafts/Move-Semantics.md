@@ -1,4 +1,0 @@
----
-title: Move Semantics
-tags:
----
