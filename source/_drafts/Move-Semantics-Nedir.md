@@ -23,14 +23,13 @@ Tam olarak ne olduklarını, nasıl çalıştıklarını anlatmak ve anlamak o k
     int a = (321 + 123) * 2;
     int b = 10 * 20;
     int c = a + b;
-    (10 - 5) = a; // hata!
 {% endcodeblock %}
 
-Bütün bu değişkenler lvalue tipindedir. text, str, total, size, items ve sum değişkenleri lvalue olarak istediğiniz zaman ulaşabilirsiniz. İstediğiniz zaman değiştirebilirsiniz. Atama işlemlerinin sol tarafında ki değişkenler her zaman lvaluedur. Zaten lvalue açılımı da **left value** demektir. **(10 - 5) = a** işlemide ondan dolayı hatalı bir işlemdir.
+Bütün bu değişkenler lvalue tipindedir. text, str, total, size, items ve sum değişkenleri içerilerinde veri tutmakta ve istediğimiz zaman o bilgilere erişip düzenleme yapabiliriz. Atama işlemlerinin sol tarafında ki değişkenler her zaman(küçük bir istisna var sadece) **lvalue** tipindedir ve lvalue açılımı **left value** demektir.
 
-rvalue tipi ise anlık olarak hafıza oluşturup daha sonra silinen verilerdir. **right value**'un kısaltılmasıdır ve genel olarak atama işlemlerinin sağ tarafında yer alan değerlerdir. lvalue tersi olarak atama işlemi ayapamazsınız.
+rvalue tipi ise anlık olarak hafıza oluşturup daha sonra silinen verilerdir. **right value**'un kısaltılmasıdır ve atama işlemlerinin sağ tarafında yer alan değerlerdir. lvalue tersi olarak atama işlemi yapamazsınız (küçük bir istisna var).
 
-Burada ki **(321 + 123) * 2**, **10*10**, **a + b** anlık olarak oluşturulmakta ve değişkene atanmaktadır. Bu atama işlemleri copy constructor çağrımı yapılmakta.
+Örnekte ki **(321 + 123) * 2**, **10*10**, **a + b** anlık olarak oluşturulmakta ve değişkene atanmaktadır. Bu atama işlemleri copy constructor yada assignment operator çağrımı yapılmakta.
 rvalue çıkış amacı performans sorunlarını ortadan kaldırmaktadır. Fazladan kopyalama işlemlerini yapmasına engel olarak sadece taşıma işlemi ile atama işlemini tamamlamak.
 
 Şu ana kadar yaptığımız atama işlemleri için referans sembolü (**&**) kullanıyorduk ve bunu lvalue atamalarında kullanıyoruz. rvalue için ise yeni bir sembol eklendi. **&&** ile rvalue referanslarını kullanabiliyoruz. Çok bir fark yok gibi görünüyor olsada aslında oldukça önemli bir gelişme.
