@@ -32,6 +32,11 @@ status = 3 in A
 A = [1, 2, 3, 4, 5, 6]
 status = 20 not in A
 {% endcodeblock %} | $$ A = \\{ 1, 2, 3, 4, 5, 6 \\}, 20 \notin A $$ |
+| {% codeblock lang:python %}
+a = [1, 2, 3, 4, 5, 6]
+print(a[1] * a[2])
+{% endcodeblock %} | $$ a = \\{ 1, 2, 3, 4, 5, 6 \\} \\\\a_1a_2 $$ |
+
 
 # Kök İşlemi
 
@@ -65,6 +70,14 @@ import math
 def f(n, m):
     return math.pow(n, m)
 {% endcodeblock %} | $$f(n, m) = n^m $$ |
+| {% codeblock lang:python %}
+def f(n, m):
+    if n == m:
+        return 0
+    if n > m:
+        return 1
+    return -1
+{% endcodeblock %} | $$\begin{equation} f(n) = \begin{cases} 0 & n = m\\\\1 & n > m\\\\ -1 & \text{otherwise} \end{cases}\end{equation}$$ |
 | Fibonacci fonksiyonu {% codeblock lang:python %}
 def f(n):
     if n == 0:
@@ -107,6 +120,12 @@ sum = 0.0
 for i in range(1, 101):
     sum = sum + (1 / math.sqrt(i))
 {% endcodeblock %} | $$ \sum_{i=1}^{100} \frac{1}{ \sqrt{i}} $$ |
+| {% codeblock lang:python %}
+a = [1, 2, 3, 4, 5, 6]
+sum = 0.0
+for i in range(100):
+    sum = sum + a[i]
+{% endcodeblock %} | $$ a = \\{ 1, 2, 3, 4, 5, 6 \\} \\\\ \sum_{i=0}^{99} a_i $$ |
 
 
 Aslında matematik göründüğünden daha basit. Önemli olan gördüğünü okuyabilmek.
