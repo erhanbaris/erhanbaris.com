@@ -126,6 +126,15 @@ sum = 0.0
 for i in range(100):
     sum = sum + a[i]
 {% endcodeblock %} | $$ a = \\{ 1, 2, 3, 4, 5, 6 \\} \\\\ \sum_{i=0}^{99} a_i $$ |
+| {% codeblock lang:python %}
+x = [1.1, 3.4, 2.1, 0.6, 0.4, 1.8, 4.1]
+y = [1.4, 4.8, 0.4, 1.1, 1.4, 3.5, 1.3]
+
+sum = 0.0
+for i in range(len(x)):
+    sum = sum + math.pow(x[i] - y[i], 2)
+cost = sum / (2 * len(x))
+{% endcodeblock %} | $$ x = \\{ 1.1, 3.4, 2.1, 0.6, 0.4, 1.8, 4.1 \\} \\\\y = \\{ 1.4, 4.8, 0.4, 1.1, 1.4, 3.5, 1.3 \\} \\\\ \\\\Cost = \frac{ \sum_{i=1}^{m} (x_i-y_i)^2}{2m} $$ |
 
 
 Aslında matematik göründüğünden daha basit. Önemli olan gördüğünü okuyabilmek.
