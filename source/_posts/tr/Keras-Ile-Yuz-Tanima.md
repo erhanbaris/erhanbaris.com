@@ -10,9 +10,9 @@ lang: tr
 date: 2018-06-10 19:40:22
 ---
 
-Bir süredir yapay zeka konuları ile ilgileniyorum. Python sayesinde bir çok sorunun basit çözümlerinin olduğunu ve bunları gerçek dünya sorunları ile örtüştürüle bileceğini görmek gerçektende keyif verici. Özellikle keras kütüphanesi yeni başlayanlar da dahil olmak üzere bir çok kişi tarafından kullanılıyor. Oldukça kolay ve esnek yapısı sayesinde neredeyse her konuda çözüm üretebiliyor.
+Artık günümüzde bir çok yapay zeka sorununu python ve zengin kütüphaneleri sayesinde  kolaylıkla çözebiliyoruz. Eskiden oldukça zor ve karmaşık olan çözüm yöntemleri büyük firmaların kullandıkları yapıları açık kaynak kodlu hale getirmeleri ve bir çok gönüllünün bilgi birikimlerini paylaşmaları bu tarz sorunların üstesinden gelmeyi kolaylaştırıyor. Özellikle keras kütüphanesi yeni başlayanlar da dahil olmak üzere bir çok kişi tarafından kullanılıyor. Oldukça kolay ve esnek yapısı sayesinde neredeyse her konuda çözüm üretebiliyor.
 
-Öncelikle kendimin tam olarak 1500 tane fotoğrafını çekip train ettirdikten sonra kamerada beni tanımasını bekledim. Ne yazık ki beklediğim gibi olmadı. Yazdığım kodu değiştirdim, gene olmadı. Nerede hata yaptığımı düşündüm durdum. Sonradan fark ettim ki beni diğer yüzlerden ayırabilmesi için ben ve diğerlerini bilmesi gerekiyor. Biraz tuhaf bir cümle oldu ama aslında tam olarak o. Yani benim fotoğraflarımı inceleyip beni tanır iken diğerlerinden ne farkımın olduğunu anlaması için diğer insanlarıda incelemesi ve benim farklılıklarımı tespit etmesi gerekiyordu. Bende kendi fotoğraflarımın yanında başkalarınında fotoğraflarını train işlemine soktum. Evet, sonunda bir sonuç elde etmeye başladım. Beni tanımaya başladı ama tam olarak istediğim gibi olmasa bu da bir çözümdü. Sonradan birkaç düzenleme ile birlikte çok daha iyi sonuçlar elde ettim.
+Öğrenme amaçlı olarak beni diğer kişilerden ayırt edebilecek ufak bir fikri ile denemeler yapmaya başladım. Öncelikle 1500 tane fotoğrafımı çekip train ettirdikten sonra kamerada beni tanımasını bekledim. Ne yazık ki beklediğim gibi olmadı. Yazdığım kodu değiştirdim, gene olmadı. Nerede hata yaptığımı düşündüm ve sonradan fark ettim ki beni diğer yüzlerden ayırabilmesi için ben ve diğerlerini bilmesi gerekiyor. Biraz tuhaf bir cümle oldu ama aslında tam olarak bu. Yani benim fotoğraflarımı inceleyip beni tanır iken diğer yüzlerden ne farkımın olduğunu anlaması için diğer insanlarıda incelemesi ve benim farklılıklarımı tespit etmesi gerekiyordu. Bende kendi fotoğraflarımın yanında başkalarınında fotoğraflarını çekip train işlemine soktum. Ve beklediğim gibi beni diğer insanlardan ayırt etmeye başladı.
 Şimdi gelelim bu işlemler nasıl oldu ve nasıl ilerledim.
 
 Öncelikle kameradan görüntü almak gerekiyor. Bir çok kütüphane olsada aralarında en iyisi OpenCV birinci tercihim oldu. Fotoğrafları düzenlemek, işlemek için skimage kullanmayı uygun gördüm. sklearn ile gerekli araç gereçler için kullandım ve tabikide tahmin işlemleri için keras kullandım.
@@ -26,13 +26,13 @@ Elimizde bir dataset yok ve acil olarak bunu oluşturmamız gerekiyor. Bunun iç
 {% gist f6846e6a440ac75f3cd0a5024e6e4077 OpenCV_camera.py %}
 
 frame bizim fotoğraf değişkenimiz. frame değişkeninin tipi numpy array ve bu bizim bir çok iş yapmaktan kurtaracak. Kameradan aldığımız görüntüleri arka arkaya kayıt ederek dataset oluşturacağız. Bir çok kişiden kayıtlar alıp bunları klasörleyip kullanacağız. Fakat bu fotoğrafların boyutlarının çok büyük olması train işlemini yavaşlatacak ve çıkmaza sokacak bir durum. Tabi elinizde kullanabileceğiniz bir GPU varsa o başka.
-Fotoğrafları 300 * 300 pixel boyutlarında kullanmayı tercih ediyorum.
+Fotoğrafları 300 * 300 pixel boyutlarında kullanmayı tercih ediyorum. Kameradan alınan fotoğraflar üzerinde sadece küçültme ve kesme işlemi haricinde bir işlem yapmıyorum.
 
 {% gist f6846e6a440ac75f3cd0a5024e6e4077 OpenCV_camera_2.py %}
 
 img klasörünün içerisine **erhan**, **aysel**, **ilker**, **bulent**, **omer** ve **guleser** isimli klasörler açarak kamerada bu kişilerin tek tek fotoğraflarını çekiyoruz. Her enter tuşuna basışımızda bir sonra ki kişinin fotoğrafları çekiliyor. Bunları siz istediğiniz gibi düzenleyin.
 Böylelikle elimizde tam olarak 7500 tane fotoğraf var ve artık asıl işimize geri dönebiliriz.
-Öncelikle keras'ta Dense layer kullandım ama istediğim sonuçlara bir türlü ulaşamadım. Zaten görüntü işlemede **CNN** oldukça yaygın olarak kullanılan bir nöron ağı. Nöron ağımızı oluşturmaya ve dataset'imizi train ettirmeye artık başlayabiliriz.
+Öncelikle keras'ta Dense layer kullandım ama istediğim sonuçlara bir türlü ulaşamadım. Zaten görüntü işlemede **CNN** oldukça yaygın olarak kullanılan bir teknik. Nöron ağımızı oluşturmaya ve dataset'imizi train ettirmeye artık başlayabiliriz.
 
 {% gist f6846e6a440ac75f3cd0a5024e6e4077 cnn.py %}
 
@@ -54,7 +54,7 @@ Bulmacanın eksik kalan parçalarınıda koyup kodu toparlamanın zamanı geldi.
 {% gist f6846e6a440ac75f3cd0a5024e6e4077 final.py %}
 
 Üst kısımda yaptıklarımızı biraz daha topladık ve artık çalışan bir kodumuz oldu. Uygulamayı çalıştırdığımızda karenin ortasına kafamızı yerleştirip önce fotoğrafları kayıt ediyoruz sonrasında train işlemi yaplıyor ve bütün bunlar bittikten sonra da kırmızı çizgilerin içerisine kafamızı yerleştirip tahmin etmesini izliyoruz.
-Benim için oldukça eğitici ve ilginç bir uygulama oldu. Umarım sizinde hoşunuza gitmiştir. Bu arada fotoğrafları siyah beyaz olarak kullandığımızı söylemeyi unutmuşm. Zira işleri kısaltmak ve bilgisayarları yormamak istedim.
+Bu arada fotoğrafları siyah beyaz olarak kullandığımızı söylemeyi unutmuşm. Zira işleri kısaltmak ve bilgisayarları yormamak istedim.
 
 Ve bu kadar emeğimizin sonucu :)
 
