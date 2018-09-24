@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.erhanbaris.com/"/>
-  <updated>2018-07-26T08:44:59.683Z</updated>
+  <updated>2018-09-24T19:30:14.678Z</updated>
   <id>http://www.erhanbaris.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How To Install Valgrind On MacOsX</title>
+    <link href="http://www.erhanbaris.com/en/2018/09/24/How-To-Install-Valgrind-On-MacOsX/"/>
+    <id>http://www.erhanbaris.com/en/2018/09/24/How-To-Install-Valgrind-On-MacOsX/</id>
+    <published>2018-09-24T18:30:14.000Z</published>
+    <updated>2018-09-24T19:30:14.678Z</updated>
+    
+    <content type="html"><![CDATA[<p>I have been tested a lot of times to install Valgrind on MacOs and I always got problem. Finally I installed Valgrind without any problem.</p><p>It is very easy to install and I want to share with you. Because, Valgrind is wonderful application for detecting memory leak and profiling codes. In my opinion, every C++ developer should have Valgrind on their PC, if there using unix based OS.</p><p><strong><em>Requirements</em></strong></p><ul><li>XCode</li><li>Git</li><li>root rights (just kidding)</li></ul><p><strong><em>Installing</em></strong></p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone gi<span class="variable">t:</span>//sourceware.org/git/valgrind.git</span><br><span class="line"><span class="keyword">cd</span> valgrind</span><br><span class="line">./autogen.<span class="keyword">sh</span></span><br><span class="line">./configure</span><br><span class="line"><span class="keyword">make</span></span><br><span class="line">sudo <span class="keyword">make</span> install</span><br></pre></td></tr></table></figure><p>If you get exception something like that:<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">make[<span class="number">3</span>]: Nothing <span class="keyword">to</span> be done <span class="keyword">for</span> `<span class="keyword">all</span>-am'.</span><br><span class="line">Making <span class="keyword">all</span> <span class="keyword">in</span> coregrind</span><br><span class="line">make[<span class="number">2</span>]: *** No rule <span class="keyword">to</span> make target `/usr/include/mach/mach_vm.defs', needed by `m_mach/mach_vmUser.c'.  Stop.</span><br><span class="line">make[<span class="number">1</span>]: *** [<span class="keyword">all</span>-recursive] <span class="literal">Error</span> <span class="number">1</span></span><br><span class="line">make: *** [<span class="keyword">all</span>] <span class="literal">Error</span> <span class="number">2</span></span><br></pre></td></tr></table></figure><br>it means you are not using latest version of XCode and you need to do execute following shell command.</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure><p>and then execute <strong><em>make</em></strong> command again. That is all.</p><p>Let’s do some small examples.<br>First we can profile codes line by line.</p><p>Create new C/C++ application for testing. I did it as symspelltest application.<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valgrind <span class="attribute">--tool</span>=callgrind <span class="attribute">--simulate-cache</span>=<span class="literal">yes</span> ./symspelltest</span><br></pre></td></tr></table></figure></p><p>Valgrind generate log file when execution finished.<br>I assume, you are already installed homebrew.<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>qcachegrind --with-graphviz</span><br></pre></td></tr></table></figure></p><p>Now, check call stacks.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">qcachegrind</span> <span class="selector-tag">callgrind</span><span class="selector-class">.out</span><span class="selector-class">.212</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I have been tested a lot of times to install Valgrind on MacOs and I always got problem. Finally I installed Valgrind without any problem
+      
+    
+    </summary>
+    
+    
+      <category term="C++" scheme="http://www.erhanbaris.com/tags/C/"/>
+    
+      <category term="CPP" scheme="http://www.erhanbaris.com/tags/CPP/"/>
+    
+      <category term="Valgrind" scheme="http://www.erhanbaris.com/tags/Valgrind/"/>
+    
+      <category term="MacOsX" scheme="http://www.erhanbaris.com/tags/MacOsX/"/>
+    
+  </entry>
   
   <entry>
     <title>Yurt Dışında Nasıl İş Bulunur?</title>
@@ -103,8 +132,8 @@
   
   <entry>
     <title>Düşünen Makineler</title>
-    <link href="http://www.erhanbaris.com/tr/2018/05/26/Dusunen-Makineler/"/>
-    <id>http://www.erhanbaris.com/tr/2018/05/26/Dusunen-Makineler/</id>
+    <link href="http://www.erhanbaris.com/tr/2018/05/25/Dusunen-Makineler/"/>
+    <id>http://www.erhanbaris.com/tr/2018/05/25/Dusunen-Makineler/</id>
     <published>2018-05-25T21:49:29.000Z</published>
     <updated>2018-05-25T21:49:29.047Z</updated>
     
@@ -157,8 +186,8 @@
   
   <entry>
     <title>SonOff Basic Wifi Kurulumu</title>
-    <link href="http://www.erhanbaris.com/tr/2018/03/25/SonOff-Basic-Wifi-Kurulumu/"/>
-    <id>http://www.erhanbaris.com/tr/2018/03/25/SonOff-Basic-Wifi-Kurulumu/</id>
+    <link href="http://www.erhanbaris.com/tr/2018/03/24/SonOff-Basic-Wifi-Kurulumu/"/>
+    <id>http://www.erhanbaris.com/tr/2018/03/24/SonOff-Basic-Wifi-Kurulumu/</id>
     <published>2018-03-24T21:22:26.000Z</published>
     <updated>2018-03-24T21:23:00.243Z</updated>
     
@@ -189,13 +218,13 @@
     <published>2018-03-24T09:11:33.000Z</published>
     <updated>2018-03-24T09:11:33.491Z</updated>
     
-    <content type="html"><![CDATA[<p>Bir <a href="/tr/2018/03/23/object-oriented-bize-ne-gibi-yenilikler-getirdi/" title="önce ki">önce ki</a> yazıda OO dillerin iddialarından birisinin de kapsülleme özelliğinin olduğunu söylemiştik. Fakat tam olarak c dilinde ki gibi mükemmel bir sonuç elde edemediğimizi ve bunun için access modifiers(public, private, protected) kullanılması gerektiğinden bahsetmiştik. İşin kötü tarafı bunları kullanmak belli bir oranda sorunu çözsede header dosyasında bir düzenleme yaptığınız taktirde bunu referans alan diğer bütün kodlar zincirleme olarak tekrardan derlenmesine neden oluyor. En basitinden bir değişken bile eklemiş olsanız diğer dosyalarında derlenmesi gerekiyor. Eğer merkezi konumda ki bir dosyanızda düzenleme yaptıysanız ve projeniz büyük ise bu gerçektende can sıkıcı oluyor. Bu tarz durumlardan kurtulmak için tam bir yalıtılmışlık sağlamak için bütün görünür olan değişkenlerinizin header dosyasında gizlemeye ihtiyacınız oluyor. Bu soruna çözüm seçeneklerinden birisi <strong>Pimpl Idiom</strong>‘dur.<br>Pimpl Idiom ile kullanmanız gereken bütün private fonksiyon ve değişkenlerinizi başka bir class içerisine taşıyıp sadece cpp dosyası içerisinde tanımlamalarını yapıyorsunuz. Header içerisinde ise sadece horward declaration ile böyle bir sınıfınızın olduğunu belirtiyorsunuz, fakat bunun dışında içeriği konusunda hiçbir bilgi vermiyorsunuz.<br>Örnek olarak aşağıda ki gibi bir sınıfınızın olduğunu varsayalım.<br><script src="//gist.github.com/erhanbaris/b63375f88be3cc1be025b976f55b838a.js?file=AppServer_v1.hpp"></script></p><p>Örnek olarak isteklerin cachelenmesi için bir düzenleme yaptığınız takdirde bunu private olarak eklerseniz önceden de bahsettiğim gibi referanslarında derlenmesi gerekecek.</p><script src="//gist.github.com/erhanbaris/b63375f88be3cc1be025b976f55b838a.js?file=AppServer_v2.hpp"></script><p>Header içerisinde AppServerImpl isminde bir sınıfımızın olduğunu belirttik ve bunu AppServer içerisinde kullandığımızından bahsettik. Diğer bütün private olan şeylerimizin hepsini ortadan kaldırdık.</p><p>Bunu kullanacak olan yazılımcı/firmanın daha fazla bilgi edinmesini istemiyoruz. cpp dosyamız için tanımlamada aşağıda ki gibi olacaktır.<br><script src="//gist.github.com/erhanbaris/b63375f88be3cc1be025b976f55b838a.js?file=AppServer_v2.cpp"></script></p><p>AppServer sınıfı için gerekli bütün private değişkenler ile private methodların hepsini AppServerImpl içerisinde tanımlıyoruz. Ayrıca AppServer pointer bilgisini AppServerImpl sınıfında tanımladım. Bunun nedeni AppServerImpl içerisinde public metod yada değişkenlere erişebilmemi sağlaması içindi.<br>Eğer AppServer genel yapısı üzerinde düzenleme yapmam gerekirse (ki public olanları kast etmiyorum) diğer bütün referans alan kodları derlemem gerekmeyecek.<br>Kodlarını ne kadar gizlerseniz o kadar kolay değişiklikler yapabilir ve zaman kazanırsınız.</p>]]></content>
+    <content type="html"><![CDATA[<p>Bir <a href="/tr/2018/03/22/object-oriented-bize-ne-gibi-yenilikler-getirdi/" title="önce ki">önce ki</a> yazıda OO dillerin iddialarından birisinin de kapsülleme özelliğinin olduğunu söylemiştik. Fakat tam olarak c dilinde ki gibi mükemmel bir sonuç elde edemediğimizi ve bunun için access modifiers(public, private, protected) kullanılması gerektiğinden bahsetmiştik. İşin kötü tarafı bunları kullanmak belli bir oranda sorunu çözsede header dosyasında bir düzenleme yaptığınız taktirde bunu referans alan diğer bütün kodlar zincirleme olarak tekrardan derlenmesine neden oluyor. En basitinden bir değişken bile eklemiş olsanız diğer dosyalarında derlenmesi gerekiyor. Eğer merkezi konumda ki bir dosyanızda düzenleme yaptıysanız ve projeniz büyük ise bu gerçektende can sıkıcı oluyor. Bu tarz durumlardan kurtulmak için tam bir yalıtılmışlık sağlamak için bütün görünür olan değişkenlerinizin header dosyasında gizlemeye ihtiyacınız oluyor. Bu soruna çözüm seçeneklerinden birisi <strong>Pimpl Idiom</strong>‘dur.<br>Pimpl Idiom ile kullanmanız gereken bütün private fonksiyon ve değişkenlerinizi başka bir class içerisine taşıyıp sadece cpp dosyası içerisinde tanımlamalarını yapıyorsunuz. Header içerisinde ise sadece horward declaration ile böyle bir sınıfınızın olduğunu belirtiyorsunuz, fakat bunun dışında içeriği konusunda hiçbir bilgi vermiyorsunuz.<br>Örnek olarak aşağıda ki gibi bir sınıfınızın olduğunu varsayalım.<br><script src="//gist.github.com/erhanbaris/b63375f88be3cc1be025b976f55b838a.js?file=AppServer_v1.hpp"></script></p><p>Örnek olarak isteklerin cachelenmesi için bir düzenleme yaptığınız takdirde bunu private olarak eklerseniz önceden de bahsettiğim gibi referanslarında derlenmesi gerekecek.</p><script src="//gist.github.com/erhanbaris/b63375f88be3cc1be025b976f55b838a.js?file=AppServer_v2.hpp"></script><p>Header içerisinde AppServerImpl isminde bir sınıfımızın olduğunu belirttik ve bunu AppServer içerisinde kullandığımızından bahsettik. Diğer bütün private olan şeylerimizin hepsini ortadan kaldırdık.</p><p>Bunu kullanacak olan yazılımcı/firmanın daha fazla bilgi edinmesini istemiyoruz. cpp dosyamız için tanımlamada aşağıda ki gibi olacaktır.<br><script src="//gist.github.com/erhanbaris/b63375f88be3cc1be025b976f55b838a.js?file=AppServer_v2.cpp"></script></p><p>AppServer sınıfı için gerekli bütün private değişkenler ile private methodların hepsini AppServerImpl içerisinde tanımlıyoruz. Ayrıca AppServer pointer bilgisini AppServerImpl sınıfında tanımladım. Bunun nedeni AppServerImpl içerisinde public metod yada değişkenlere erişebilmemi sağlaması içindi.<br>Eğer AppServer genel yapısı üzerinde düzenleme yapmam gerekirse (ki public olanları kast etmiyorum) diğer bütün referans alan kodları derlemem gerekmeyecek.<br>Kodlarını ne kadar gizlerseniz o kadar kolay değişiklikler yapabilir ve zaman kazanırsınız.</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Bir &lt;a href=&quot;/tr/2018/03/23/object-oriented-bize-ne-gibi-yenilikler-getirdi/&quot; title=&quot;önce ki&quot;&gt;önce ki&lt;/a&gt; yazıda OO dillerin iddialarında
+        &lt;p&gt;Bir &lt;a href=&quot;/tr/2018/03/22/object-oriented-bize-ne-gibi-yenilikler-getirdi/&quot; title=&quot;önce ki&quot;&gt;önce ki&lt;/a&gt; yazıda OO dillerin iddialarında
       
     
     </summary>
@@ -211,8 +240,8 @@
   
   <entry>
     <title>Object Oriented Bize Ne Gibi Yenilikler Getirdi?</title>
-    <link href="http://www.erhanbaris.com/tr/2018/03/23/object-oriented-bize-ne-gibi-yenilikler-getirdi/"/>
-    <id>http://www.erhanbaris.com/tr/2018/03/23/object-oriented-bize-ne-gibi-yenilikler-getirdi/</id>
+    <link href="http://www.erhanbaris.com/tr/2018/03/22/object-oriented-bize-ne-gibi-yenilikler-getirdi/"/>
+    <id>http://www.erhanbaris.com/tr/2018/03/22/object-oriented-bize-ne-gibi-yenilikler-getirdi/</id>
     <published>2018-03-22T21:14:41.000Z</published>
     <updated>2018-03-24T11:05:01.000Z</updated>
     
@@ -233,11 +262,11 @@
     </summary>
     
     
+      <category term="C++" scheme="http://www.erhanbaris.com/tags/C/"/>
+    
       <category term="OO" scheme="http://www.erhanbaris.com/tags/OO/"/>
     
       <category term="C" scheme="http://www.erhanbaris.com/tags/C/"/>
-    
-      <category term="C++" scheme="http://www.erhanbaris.com/tags/C/"/>
     
   </entry>
   
