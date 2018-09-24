@@ -1,12 +1,14 @@
 ---
 title: How To Install Valgrind On MacOsX
-tags: 
- - C++
- - CPP
- - Valgrind
- - MacOsX
+tags:
+  - C++
+  - CPP
+  - Valgrind
+  - MacOsX
 lang: en
+date: 2018-09-24 21:30:14
 ---
+
 
 I have been tested a lot of times to install Valgrind on MacOs and I always got problem. Finally I installed Valgrind without any problem.
 
