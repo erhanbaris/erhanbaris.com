@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.erhanbaris.com/en/2018/10/07/My-new-Open-Source-project-simple-hash/</loc>
+    
+    <lastmod>2018-10-07T18:38:51.799Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.erhanbaris.com/en/2018/10/07/Deleting-commit-from-Mercurial-via-terminal/</loc>
+    
+    <lastmod>2018-10-07T18:38:34.298Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.erhanbaris.com/en/2018/09/24/How-To-Install-Valgrind-On-MacOsX/</loc>
     
     <lastmod>2018-09-24T19:30:14.678Z</lastmod>
@@ -72,14 +86,14 @@
   </url>
   
   <url>
-    <loc>http://www.erhanbaris.com/about-me/index.html</loc>
+    <loc>http://www.erhanbaris.com/projects/index.html</loc>
     
     <lastmod>2018-03-21T17:21:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.erhanbaris.com/projects/index.html</loc>
+    <loc>http://www.erhanbaris.com/about-me/index.html</loc>
     
     <lastmod>2018-03-21T17:21:00.000Z</lastmod>
     
