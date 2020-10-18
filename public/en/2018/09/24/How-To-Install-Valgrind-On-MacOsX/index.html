@@ -7,7 +7,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="I have been tested a lot of times to install Valgrind on MacOs and I always got problem. Finally I installed Valgrind without any problem. It is very easy to install and I want to share with you. Beca">
-<meta name="keywords" content="C++,CPP,Valgrind,MacOsX">
+<meta name="keywords" content="MacOsX,C++,CPP,Valgrind">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How To Install Valgrind On MacOsX">
 <meta property="og:url" content="http://www.erhanbaris.com/en/2018/09/24/How-To-Install-Valgrind-On-MacOsX/index.html">
@@ -219,7 +219,7 @@
     
     <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2018 Erhan BARIS
+    Copyright &copy; 2020 Erhan BARIS
   </div>
   <div class="footer-right">
     <nav>
@@ -236,7 +236,24 @@
       </ul>
     </nav>
   </div>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 
 </body>
 </html>

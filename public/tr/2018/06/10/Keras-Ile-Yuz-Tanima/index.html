@@ -14,12 +14,10 @@
 <meta property="og:site_name" content="Erhan BARIŞ (Ruslan Asenov)">
 <meta property="og:description" content="Artık günümüzde bir çok yapay zeka sorununu python ve zengin kütüphaneleri sayesinde  kolaylıkla çözebiliyoruz. Eskiden oldukça zor ve karmaşık olan çözüm yöntemleri büyük firmaların kullandıkları yap">
 <meta property="og:locale" content="tr">
-<meta property="og:image" content="http://www.erhanbaris.com/tr/2018/06/10/Keras-Ile-Yuz-Tanima/yuz_tanima.png">
 <meta property="og:updated_time" content="2018-06-10T19:03:43.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keras İle Yüz Tanıma">
 <meta name="twitter:description" content="Artık günümüzde bir çok yapay zeka sorununu python ve zengin kütüphaneleri sayesinde  kolaylıkla çözebiliyoruz. Eskiden oldukça zor ve karmaşık olan çözüm yöntemleri büyük firmaların kullandıkları yap">
-<meta name="twitter:image" content="http://www.erhanbaris.com/tr/2018/06/10/Keras-Ile-Yuz-Tanima/yuz_tanima.png">
     
     
         
@@ -157,7 +155,7 @@
 <p>Üst kısımda yaptıklarımızı biraz daha topladık ve artık çalışan bir kodumuz oldu. Uygulamayı çalıştırdığımızda karenin ortasına kafamızı yerleştirip önce fotoğrafları kayıt ediyoruz sonrasında train işlemi yaplıyor ve bütün bunlar bittikten sonra da kırmızı çizgilerin içerisine kafamızı yerleştirip tahmin etmesini izliyoruz.<br>Bu arada fotoğrafları siyah beyaz olarak kullandığımızı söylemeyi unutmuşm. Zira işleri kısaltmak ve bilgisayarları yormamak istedim.</p>
 <p>Ve bu kadar emeğimizin sonucu :)</p>
  
-<img src="/tr/2018/06/10/Keras-Ile-Yuz-Tanima/yuz_tanima.png" title="Keras ile yüz tanıma">
+
   </div>
 </article>
 
@@ -221,7 +219,7 @@
     
     <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2018 Erhan BARIS
+    Copyright &copy; 2020 Erhan BARIS
   </div>
   <div class="footer-right">
     <nav>
@@ -238,7 +236,24 @@
       </ul>
     </nav>
   </div>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 
 </body>
 </html>
