@@ -34,7 +34,7 @@
     "jshint": "^2.9.5",
     "jshint-stylish": "^2.2.1",
     "stylint": "^1.5.9",
-    "stylint-stylish": "^1.4.1",
+    "stylint-stylish": "^2.0.0",
     "stylus-supremacy": "^2.9.0"
   },
   "dependencies": {
