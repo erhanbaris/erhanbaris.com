@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/probberechts/cactus-dark#readme",
   "devDependencies": {
-    "del": "^3.0.0",
+    "del": "^7.0.0",
     "gulp": "^3.9.1",
     "gulp-decompress": "^2.0.2",
     "gulp-download": "0.0.1",
