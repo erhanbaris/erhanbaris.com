@@ -11,47 +11,111 @@ lang: tr
 
 ## Giriş
 
-Bir bebeğinizin olması hayatınızda başınıza gelen en güzel şeylerden birisidir. Sürekli olarak gözetim altında tutup uykusunu yemesini ve tuvaletini takip etmeniz gerekir. Her değişikliği bilmek ve anormal olan durumları bilmek hayatı önem taşır. Bebeğin ağlaması, uyuması, emmesi, tuvatini ne renkte ve ne sıklıkta yaptığı her biri gelişiminin nasıl gittiği ile ilgili bize ip uçları veriyor. Bütün bu durumlar için ücretli ve ücretsiz olarak bir çok uygulama mevcut. Bazı insanlar bunları akıllarında tutarak kontrol ediyor ama daha yenilikçi ve teknoloji ile arası iyi olan ebeveynler uygulamalar kullanma seçeğini tercih ediyor. Biz ise (ben ve eşim) uygulama kullanmayı çoğu zaman unuttuğumuz için aklımızda tutmayı denedik ama çoğu zaman başarısız olduk. Son olarak yeni aldığımız otomatik beşikte bebeğin ne kadar uyuduğunu takip etmek bizim için bir sorun olmaya başladı. Bunun nedeni uygulamaları kullanamamızdan ziyade uygulamaya veri girmeyi unutmamızdan kaynaklı.
-Kullandığımız beşik aşağıda ki gibidir ve yana sallanmak  yerine yukarı aşağı yönünde sallanmakta.
+Bir bebeğinizin olması hayatınızda başınıza gelen en güzel şeylerden birisidir. Hayatınızda bir çok güzellik ve yenilik ile birlikte gelir. Ama sürekli olarak uykusunu, yemesini ve tuvaletini takip etmeniz de gerekir. Her değişikliği bilmek hayatı önem taşır. Bebeğin ağlaması, uyuması, emmesi, tuvaletini ne renkte ve ne sıklıkta yaptığı her biri gelişiminin nasıl gittiği ile ilgili bize ip uçları veriyor. Bütün bu durumlar için ücretli ve ücretsiz olarak bir çok uygulama mevcut.
+Bebeğimizi ne zaman uyuttuğumuzu takip etmek bizim için sorun olmaya başlayınca bunu nasıl otomatikleştiririz diye düşündük. 
+Kullandığımız beşik aşağıda ki gibi ve yana sallanmak yerine yukarı aşağı yönünde sallanmakta.
 
 ![](./Bebek-uyku-takibi/membantu.jpg)
 
-Üzerinde ki küçük motor beşiği sallamaktadır. İşin gerçeği bu beşik bizi gerçektende çok rahatlattı, bebeğin kolaylıkla uyumasına yardımcı oluyor. Peki bu beşik ile uyku takibi nasıl yapılır? Önceden satın aldığım Arduino ve sensörler ile birşeyler yapabilir miyim diye düşündük ve denemeye karar verdik.
+Üzerinde ki küçük motor beşiği salliyor. İşin gerçeği bu beşik bizi gerçektende çok rahatlattı, bebeğin kolaylıkla uyumasına yardımcı oluyor. Peki bu beşik ile uyku takibi nasıl yapılır? Önceden satın aldığım Arduino ve sensörler ile birşeyler yapabilir miyim diye düşündük ve denemeye karar verdik.
 
-## Denemeler
-### Titreşim Sensörü
+Daha önceden almış olduğum Arduino ve sensörler ile neler yapılabileceğini araştırmaya başladım. Fakat önceden hiç bir tecrübem olmadığı için neyin doğru yada yanlış olduğunu anlamak zor oldu.
+Bir çok seçenek arasından doğru olanı bulmak zaman alıyor. İşte bunlarda araştırmalarım ve denemelerimin sonuçları.
+
+### Titreşim sensörü ile hareket algılama
 İlk aklıma gelen beşik eğer hareket ediyorsa bebekte uyuyor mantığından hareket ederek hareket sensörü ile takip etmekti. Bu doğrultuda elimde bulunan bütün sensörleri tek tek araştırdım ve sonunda ihtiyacım olan sensörü buldum.
 
 ![](./Bebek-uyku-takibi/SW420-Vibration-Sensor-Module.jpg)
-Neredeyse bütün kitler ile birlikte satılan **sw-420 vibration sensor module** tam aradığım çözümdü benim için. İlk olarak elimde bulunan Arduino Nano ile neler yapabileceğimi görmek için internetten [Arduino Ide](https://www.arduino.cc/en/software) uygulamasını indirip kurdum. Internette yaptığım kısa bir arama sonucunda (ki hatta Arduino Ide içerisinde ki örneklerde de mevcut) basit bir örnek uygulama kodu buldum.
+Neredeyse bütün Arduino kitler ile birlikte satılan **sw-420 vibration sensor module** tam aradığım çözümdü benim için. İlk olarak elimde bulunan Arduino Nano ile neler yapabileceğimi görmek için internetten [Arduino Ide](https://www.arduino.cc/en/software) uygulamasını indirip kurdum. Internette yaptığım kısa bir arama sonucunda (ki hatta Arduino Ide içerisinde ki örneklerde de mevcut) basit bir örnek uygulama kodu buldum.
 
-İlk denemelerimde cihaz istediğim gibi çalışıyor ama sürekli olarak farklı sonuçlar gönderiyordu. Bende istenmeyen sonuçları elemek için belli zaman aralıkları ekleyip durum değişikliklerini kontrol etmeye çalıştım. Ama tam olarak istediğim sonucu ne yazık ki alamadım. **Home Assistant** uygulaması ile nasıl entegre edebileceğimi araştırırken **ESPHome** ile bu tarz şeylerin çok daha hızlı ve kolay yapılabileceğini keşfettim.
+İlk denemelerimde cihaz istediğim gibi çalışıyor ama sürekli olarak **on**/**off** mesajı gönderdi. Durum değişikliği için düzenlemeler yaptım ama pek işe yaramadı. Internette araştırma yaparken **Home Assistant** ile tam entegre olab **ESPHome** ile bu tarz şeylerin çok daha hızlı ve kolay yapılabileceğini keşfettim.
 
 Ama bir sorun ile daha karşılaştım. Bu cihaz benim ev otomasyonum ile nasıl haberleşecek???
-Ev otomasyonuma WIFI üzerinden bilgi göndermesi gerekiyordu ve elimde hiç WIFI modülü yoktu. Kısa bir araştırma sonucunda **ESP328266**'nin bu tarz bir uygulama için uygun bir seçim olduğuna karar verdim. 
+Ev otomasyonuma WIFI üzerinden bilgi göndermesi gerekiyordu ve elimde hiç WIFI modülü yoktu. Kısa bir araştırma sonucunda **ESP328266** satın aldım.
 Aşağıda bulanacağınız linkten sipariş verip denemelerime kaldığım yerden devam ettim.
 * https://www.amazon.de/dp/B0754N794H?ref=ppx_yo2ov_dt_b_product_details&th=1
 
-Hızlı bir şekilde uygulamayı **ESPHome** aracılığı geliştirdim ve takibe başladım. İlk bir kaç kullanımda gerçektende istediğim sonucu verdiğini düşündüm ama sonrasında bu sensörün güvenilmez olduğunun farkına vardım. Bazı durumlarda hareketleri algılamıyor yada hareket olmadığı halde hareket sinyalleri gönderiyordu. Üzerinde ki kalibrasyon ayarı ile düzenleme yapmaya çalışsamda pek başarılı olduğum söylenemez.  Tam bir hayal kırıklığı olduğunu söyleyebilirim.
-Ne yazık ki elimde kodları yok ondan dolayıda burada paylaşamıyorum.
+Hızlı bir şekilde uygulamayı **ESPHome** aracılığı geliştirdim ve takibe başladım. İlk bir kaç kullanımda gerçektende istediğim sonucu verdi ama sonrasında tutarsız sonuçlar göndermeye başladı. **on** yada **off** durumunda takılı kalıyor yada hatalı mesaj göndermeye devam ediyordu. Üzerinde ki kalibrasyon ayarı ile düzenleme yapmaya çalışsamda pek başarılı olduğum söylenemez.  Tam bir hayal kırıklığı olduğunu söyleyebilirim.
+Aşağıda kullandığım örnek bulunmakta. İlgilenenler olursa istedikleri gibi kullanabilir.
 
-### Ultrasonic Sensör
+{% codeblock vibration_test.toml lang:toml %}
+esphome:
+  name: vibration_test
+  friendly_name: vibration_test
+
+esp8266:
+  board: esp01_1m
+
+# Enable logging
+logger:
+web_server:
+  port: 80
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "r4Lic9LOwYNBrDj8w2E2rOlnkfwVf7x9qgDsEH8YODg="
+
+ota:
+  password: "d90203ec782f13da794ab9b729051c2a"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Test Fallback Hotspot"
+    password: "oweH1F2KTtO9"
+
+captive_portal:
+
+time:
+  - platform: sntp
+    id: baby_bed_time
+
+sensor:
+  - platform: uptime
+    name: "Uptime baby bed"
+  - platform: wifi_signal
+    name: "WiFi Signal at baby bed"
+    update_interval: 60s
+
+binary_sensor:
+  - platform: gpio
+    name: "BabyBed"
+    id: "BabyBed"
+    device_class: vibration
+    filters:
+      delayed_on_off: 10s
+    pin: 
+      number: 0
+      mode: INPUT
+
+{% endcodeblock %}
+
+{% codeblock "Örnek Çıktı" %}
+[21:15:13][D][binary_sensor:034]: 'BabyBed': Sending initial state ON
+[21:15:32][D][binary_sensor:036]: 'BabyBed': Sending state OFF
+{% endcodeblock %}
+
+### Ultrasonic sensör ile mesafe ölçme
 
 Elimde bulunan diğer sensörleri teker teker inceleyip işime yarayacak bir sensör çıkar mı diye araştırırken **Ultrasonic Sensor HC-SR04** ile denemeler yapmaya karar verdim.
 
 ![](./Bebek-uyku-takibi/Ultrasonic-Sensor-HC-SR04.webp)
 
 Beşiğin aşağı-yukarı yönünde ki hareketleri algılamak için mesafe ölçümü yapıp, basit bir mantık ile bunu algılamak zor olmasa gerek değil mi?
-İlk başlarda herşey basit ve kolay başlado fakat kısa süre sonra ölçümlerde hatalar görünmeye başladı.
+İlk başlarda herşey basit ve kolay başladı fakat kısa süre sonra ölçümlerde hatalar görünmeye başladı.
 
-Öncelikle aşağıda ki şekli incelersek saniyede beklenen mesafe 15cm ve üzeri ise beşiğimiz hareket ediyor demektir. Ama bir diğer yandan da beşik hiç bir şekilde 50cmden fazla hareket edemez. Buna göre düzenlemeler yaptım.
+Şekilde ki gibi saniyede beklenen mesafe 15cm civarında.
 
 ![](./Bebek-uyku-takibi/hareket.jpg)
 
-İlk başlarda ciazı beşiğin altına yerleştirmiktik ama eşimin endişesi dolayısıyla beşiğin orta kısmında ki yatay çubuğun ucuna yerleştirdim. Böylelikle ölçümleri beşiğin dışından yapmaya başladı. Ama bu seferde yerleştirdiğim yerden hareket eden ölçüm cihazı beşiğin hareketsi kaldığını bildirmeye başladı. Bunu çözmek için ise 10 dakikalık bir zaman aşımı ekleyip, eğer beşik 10 dakika içerisinde durup tekrar hareket ederse bunu sadece tek bir zaman dilimi olarak algılayacak şekilde düzenledim. 
+İlk başlarda ciazı beşiğin altına yerleştirmiktik ama eşimin endişesi dolayısıyla çubuğun ucuna yere bakacak şekilde yerleştirdim. Böylelikle ölçümleri beşiğin dışından yapmaya başladı. Ama bu seferde yerleştirdiğim yerden hareket eden ölçüm cihazı beşiğin hareketsiz kaldığını bildirmeye başladı. Bunu çözmek için ise 10 dakikalık bir zaman aşımı ekleyip, eğer beşik 10 dakika içerisinde durup tekrar hareket ederse bunu sadece tek bir zaman dilimi olarak algılayacak şekilde düzenledim. 
 
 İşte burada da **ESPHome** entegrasyon kodu:
-```toml
+{% codeblock ultrasonic_test.toml lang:toml %}
+
 esphome:
   name: baby-bed-move-detector
   friendly_name: baby-bed-move-detector
@@ -123,10 +187,11 @@ sensor:
     name: distance
     update_interval: 100ms
     unit_of_measurement: cm
-    accuracy_decimals: 2
+    #accuracy_decimals: 2
     filters:
       - multiply: 100
-      - filter_out: nan
+      #- filter_out: nan
+      #- delta : 0.05
       - sliding_window_moving_average:
           window_size: 100
           send_every: 100
@@ -141,6 +206,7 @@ sensor:
           static int   start_time_timeout  = 10 * 60; //minutes
 
           static int   distance_window   = 0;
+          static int   nan_counter       = 0;
           static float distance_max      = 0.0;
           static float distance_min      = 0.0;
           static float previous_distance = 0.0;
@@ -151,19 +217,28 @@ sensor:
           static int sleeping_timeout = 3;
           static int sleeping_timer   = 0;
 
-          /* It is not possible to shake more than 50cm. Discart current value. */
-          float is_value_valid = distance_max - distance_min < 0.5;
+          // ESP_LOGI("INFO", "The value is %f", x);
+
+          /* It is not possible to shake more than 40cm. Discart current value. */
+          float is_value_valid = distance_max - distance_min < 0.4;
           if (!is_value_valid) {
-            return;
+            // ESP_LOGI("INFO", "The value has been discarded due to invalid read");
+            // return;
           }
+
+          ESP_LOGI("INFO", "The value is %f", x);
           
           if (distance_window++ > 100)
           {
             distance_window = 0;
+            
             ESP_LOGI("INFO", "The value of sensor is: max: %f min: %f diff: %f", distance_max, distance_min, distance_max - distance_min);
 
-            float is_moving = distance_max - distance_min > 0.1;
-            if (is_moving) {
+            float is_moving     = distance_max - distance_min > 0.1;
+            bool is_value_valid = nan_counter < 70;
+            nan_counter         = 0;
+
+            if (is_moving && is_value_valid) {
 
               // Icrease sleeping timer
               sleeping_timer++;
@@ -245,6 +320,11 @@ sensor:
             x = previous_distance;
           }
 
+          // If the distance more than 50 cm, set to 50 cm
+          //if (x > 0.5) {
+          //  x = 0.5;
+          //}
+
           previous_distance = x;
 
           if (distance_window == 1)
@@ -270,7 +350,53 @@ sensor:
   - platform: wifi_signal
     name: "WiFi Signal"
     update_interval: 60s
-```
+{% endcodeblock %}
+
+Fark edeceğiniz üzerine içerisinde **C++** koduda var. Bu şekilde ince düzenlemeler yaparak istediğime yakın sonuçlar almaya başladım.
+
+İşte burada da **Home Assistant** panelinde ki görüntüsü. Oldukça heyecan verici bir andı. 
+
+![](./home-assistant-sc.png)
+
+Ne zaman ve ne kadar süredir uyuduğunu, cihazın ne zamandan beri aktif olduğunu görülebilir.
+
+Ama burada da sorunlar ile karşılaştım. Sistem aralıklarla **nan** değeri döndürmeye başladı ve bazen sadece **nan** döndürdü.
+
+{% codeblock "Örnek Çıktı" %}
+[21:47:15][I][INFO:111]: The value is nan
+[21:47:15][I][INFO:111]: The value is nan
+[21:47:15][I][INFO:111]: The value is nan
+[21:47:15][I][INFO:111]: The value is nan
+[21:47:15][I][INFO:111]: The value is 0.670051
+[21:47:15][I][INFO:111]: The value is nan
+[21:47:15][I][INFO:111]: The value is nan
+[21:47:15][I][INFO:111]: The value is 0.834691
+[21:47:15][I][INFO:111]: The value is 0.880138
+[21:47:15][I][INFO:111]: The value is 0.858186
+[21:47:16][I][INFO:111]: The value is 0.792845
+[21:47:16][I][INFO:111]: The value is nan
+[21:47:16][I][INFO:111]: The value is nan
+[21:47:16][I][INFO:111]: The value is 0.688573
+[21:47:16][I][INFO:111]: The value is nan
+[21:47:16][I][INFO:111]: The value is nan
+[21:47:16][I][INFO:111]: The value is 0.837092
+[21:47:16][I][INFO:111]: The value is nan
+[21:47:16][I][INFO:111]: The value is nan
+[21:47:16][I][INFO:111]: The value is 0.767634
+[21:47:17][I][INFO:111]: The value is 0.707094
+[21:47:17][I][INFO:111]: The value is 0.687029
+[21:47:17][I][INFO:111]: The value is nan
+[21:47:17][I][INFO:111]: The value is nan
+[21:47:17][I][INFO:111]: The value is 0.802791
+[21:47:17][I][INFO:111]: The value is 0.854927
+[21:47:17][I][INFO:111]: The value is 0.870534
+[21:47:17][I][INFO:111]: The value is 0.829374
+[21:47:17][I][INFO:111]: The value is nan
+[21:47:17][I][INFO:111]: The value is nan
+{% endcodeblock %}
+
+Bazı düzenlemeler yapsamda tam istediğim gibi çalışmıyor.
+
 Not: Burada titreşim sensörü ve ultrasonik seksör bağlantı şemalarını paylaşmıyorum, internette aratarak kolayca bulabilirsiniz.
 
 **ESPHome** yasesinde sonsuruz bir şekilde **Home Assistant** ile entegrasyon sağladım ve web arayüzü ile anlık olarak debug bilgilerine erişim sağlayabildim.
@@ -278,7 +404,7 @@ Not: Burada titreşim sensörü ve ultrasonik seksör bağlantı şemalarını p
 Tabi bu kadar ilede kalmadı ve başka bir sorun ile karşılaştık. Bu seferde bebek beşiğin içerisinde olduğu halde uyumuyordu :/
 
 
-### Kamera ile takip
+### Kamera ile göz takip etme
 Bir sonra ki adım olarak dedik ki neden kamerayı beşiğin içerisine koyup bebeiğin uykusunu takip etmiyoruz ki? Hem böylelikle gerçek bir veriye ulaşmış oluruz. Saklanmak yada sarsılmalar güzel ama gerçektende bebeğin uyuyup uyumadığı bilgisini bize vermiyor. Bunun yerine sadece dışarıdan en iyi tahmini yapmamızı sağlıyor.
 
 Hemen internete girip **Arduino** ile uyumlu kameraları araştırdım ve **ESP32-CAM** karşıma çıktı. Şiir gibi bir cihaz, hem WIFI var, hem kamera var hemde **ESP32** tabanlı yani **ESP328266** ile bağlantı yapmama gerek yok. Hemen satın aldım. Şurayada linkini bırakayım:
