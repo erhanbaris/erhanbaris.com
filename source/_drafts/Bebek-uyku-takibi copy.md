@@ -269,3 +269,56 @@ _Not_: Titreşim ve ultrasonik seksör bağlantı şemalarını paylaşmıyorum,
 <a name="link-4" /><sup>4</sup> https://www.amazon.de/dp/B0CDGHV276?psc=1&ref=ppx_yo2ov_dt_b_product_details
 <a name="link-5" /><sup>5</sup> https://www.amazon.de/dp/B0B8ZT5HDW?psc=1&ref=ppx_yo2ov_dt_b_product_details
 <a name="link-6" /><sup>6</sup> https://developers.google.com/mediapipe
+
+<hr />
+
+```python
+import hashlib
+import os
+import base64
+from datetime import datetime
+
+username = "admin"
+password = "pass"
+# created = datetime.now().strftime("%Y-%m-%dT%H:%M:%S.000Z")
+created = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z")
+
+raw_nonce = os.urandom(20)
+nonce = base64.b64encode(raw_nonce)
+
+sha1 = hashlib.sha1()
+sha1.update(raw_nonce + created.encode('utf8') + password.encode('utf8'))
+raw_digest = sha1.digest()
+digest = base64.b64encode(raw_digest)
+
+template = """<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+    <s:Header>
+        <Security s:mustUnderstand="1" xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+            <UsernameToken>
+                <Username>{username}</Username>
+                <Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">{digest}</Password>
+                <Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">{nonce}</Nonce>
+                <Created xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">{created}</Created>
+            </UsernameToken>
+        </Security>
+    </s:Header>
+    <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <wsdl:GetProfiles/>
+    </s:Body>
+</s:Envelope>"""
+
+req_body = template.format(username=username, nonce=nonce.decode('utf8'), created=created, digest=digest.decode('utf8'))
+print(req_body)
+
+
+"""
+<wsdl:GetStreamUri>
+    <wsdl:ProfileToken>PROFILE_001</wsdl:ProfileToken>
+</wsdl:GetStreamUri>
+"""
+```
+
+```bash
+python3 onvif.py > request.xml
+curl --silent -X POST --header 'Content-Type: text/xml; charset=utf-8' -d @request.xml 'http://192.168.1.222:9000/onvif/device_service' | xmllint --format -
+```

@@ -1,2 +1,2 @@
 #!/bin/sh
-hexo server --draft --open --port 5000
+hexo server --draft --open --port 8080
