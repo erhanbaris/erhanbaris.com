@@ -178,7 +178,7 @@ Getting the **rtsp** address was a bit difficult, this information can be obtain
 
 <span class="info">
 
-If anyone is interested, they can check out [{% fa_inline github fab %} second method folder](https://github.com/erhanbaris/baby-sleep-track/blob/main/approach-3).
+If anyone is interested, they can check out [{% fa_inline github fab %} third method folder](https://github.com/erhanbaris/baby-sleep-track/blob/main/approach-3).
 
 </span>
 
@@ -232,7 +232,7 @@ Among three different approaches, I decided that facial recognition was the best
 
 <span class="info">
 
-You can access the full source code of the project [{% fa_inline github fab %}here](https://github.com/erhanbaris/baby-sleep-track/blob/main/approach-3).
+You can access the full source code of the project [{% fa_inline github fab %}here](https://github.com/erhanbaris/baby-sleep-track/).
 
 </span>
 
