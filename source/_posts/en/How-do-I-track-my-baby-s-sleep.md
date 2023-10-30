@@ -1,5 +1,5 @@
 ---
-title: How do I track my baby's sleep?
+title: How do I track my baby's sleep with Arduino and facial recognition?
 tags:
   - Baby
   - Arduino
@@ -7,6 +7,7 @@ tags:
   - Home Assistant
   - ESPHome
   - MediaPipe
+  - Facial recognition
 lang: en
 date: 2023-10-29 15:34:13
 ---
