@@ -9,7 +9,7 @@
     "generate": "hexo generate"
   },
   "dependencies": {
-    "hexo": "^6.0.0",
+    "hexo": "^7.0.0",
     "hexo-asset-link": "^2.2.2",
     "hexo-cli": "^4.3.1",
     "hexo-fontawesome": "^2.3.0",
