@@ -14,12 +14,12 @@ title: Erhan BARIŞ (Ruslan Asenov)
 subtitle:
 description:
 author: Erhan BARIS
-language: tr
-timezone: Asia/Istanbul
+language: en
+timezone: Europe/Copenhagen
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.erhanbaris.com
+url: https://www.erhanbaris.com
 root: /
 permalink: :lang/:year/:month/:day/:title/
 permalink_defaults:

@@ -1,38 +1,38 @@
 nav:
-  home: Anasayfa
+  home: Ana Sayfa
   about: Hakkımda
-  blog: Blog
-  projects: Projelerim
+  articles: Yazılar
+  projects: Projeler
   search: Ara
 
 footer:
-  copyright: Copyright
+  copyright: Tüm Hakları Saklıdır
 
 index:
-  find_me_on: Ulaşım adresleri
+  find_me_on: Bana şuralardan ulaşabilirsiniz
   enum_comma: ','
   enum_and: ve
-  articles: Blog
-  projects: Projelerim
+  articles: Yazılar
+  projects: Projeler
 
 post:
   desktop:
-    previous: Önceki yazı
-    next: Sonraki yazı
-    back_to_top: Yukarı çık
-    share: Paylaş
+    previous: Önceki gönderi
+    next: Sonraki gönderi
+    back_to_top: Başa dön
+    share: Gönderiyi paylaş
   mobile:
     menu: Menü
-    toc: TOC
-    back_to_top: Üst
+    toc: İçindekiler
+    back_to_top: Başa dön
     share: Paylaş
 
 search:
   search: Ara...
-  no_results: Sonuç bulunamadı.
+  no_results: Hiç bir sonuç bulunamadı.
 
 pagination:
-  page: Sayfa %d / %d
+  page: 'Sayfa %d toplam: %d'
 
 comments:
-  no_js: Please enable JavaScript to view the comments.
+  no_js: 'Yorumları görebilmek için lütfen JavaScripte izin verin.'
