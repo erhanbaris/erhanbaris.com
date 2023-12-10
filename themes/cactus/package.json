@@ -34,7 +34,7 @@
     "js-yaml": "*",
     "jshint": "^2.9.6",
     "jshint-stylish": "*",
-    "stylelint-formatter-pretty": "^3.1.0",
+    "stylelint-formatter-pretty": "^4.0.0",
     "stylint": "*",
     "stylus-supremacy": "^2.12.2"
   },
