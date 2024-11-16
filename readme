@@ -1,2 +1,8 @@
 hexo new post "Convert NEF files to JPG in MacOsX" --lang en
 hexo generate
+hexo server --open --port 8080
+hexo publish "How do I track my baby's sleep?"
+hexo server
+
+
+https://kiko.io/post/Hexo-Tag-Plugin-Collection/#alertbox
