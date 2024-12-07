@@ -26,7 +26,7 @@
   "type": "module",
   "devDependencies": {
     "del": "*",
-    "gulp": "^4.0.0",
+    "gulp": "^5.0.0",
     "gulp-decompress": "*",
     "gulp-download-stream": "*",
     "gulp-jshint": "*",
