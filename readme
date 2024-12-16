@@ -1,8 +1,3 @@
-hexo new post "Convert NEF files to JPG in MacOsX" --lang en
-hexo generate
-hexo server --open --port 8080
-hexo publish "How do I track my baby's sleep?"
-hexo server
+The blog moved from **Hugo** to **Timug** static page generator. Timug is designed and developed for purpose of improving my blog. Still under development.
 
-
-https://kiko.io/post/Hexo-Tag-Plugin-Collection/#alertbox
+The old blog content is stored under **hugo-blog** tag.
