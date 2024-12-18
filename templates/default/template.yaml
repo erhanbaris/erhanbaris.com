@@ -1,0 +1,6 @@
+name: Default template
+pre-process:
+process:
+  - cp style.css ../../public/assets/style.css
+post-process: 
+version: 1.0

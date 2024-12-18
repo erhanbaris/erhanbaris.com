@@ -1,0 +1,12 @@
+---
+title: Home
+render: true
+---
+
+{% extends "base.html" %}
+{% block body %}
+<div class="content">
+    <h1 class="columns is-centered column is-full">Posts</h1>
+    {%- include "_partial_posts.html" %}
+</div>
+{% endblock %}

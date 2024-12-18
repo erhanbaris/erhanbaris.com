@@ -2,7 +2,7 @@ title: Erhan Baris's Blog
 description: Erhan Baris's Blog
 theme: default
 deployment-folder: public
-blog-path: /Users/erhanbaris/ClionProjects/timug/blog/
+blog-path: .
 author: Erhan Baris
 email: erhanbaris@gmail.com
 site-url: https://www.erhanbaris.com/
@@ -39,5 +39,14 @@ projects:
   - name: Yummy Game Server
     link: https://erhanbaris.github.io/yummy/
 
+navs:
+  - name: Home
+    link: /
+  - name: Posts
+    link: /posts.html
+  - name: About me
+    link: /about.html
+
+
 stats:
-    link: https://timug-page-infos.erhanbaris.workers.dev/
+    link: https://timug-page-infos-2.erhanbaris.workers.dev/
