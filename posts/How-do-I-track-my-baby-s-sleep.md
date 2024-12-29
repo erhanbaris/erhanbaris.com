@@ -51,7 +51,7 @@ I purchased **ESP8266** with an integrated Wifi module[^2].
 I quickly developed the application via **ESPHome** and started tracking it. It really gave me the results I wanted at first use, but then it started to give inconsistent results. It was stuck in **on** or **off** state or continued to send incorrect messages. Even though I tried to make adjustments with the calibration setting on it, I cannot say that I was very successful. I can say that it was a complete disappointment.
 
 {% call info() %}
-If anyone is interested, they can examine the [{% call fontawesome('fab', 'github') %}{% endcall %}vibration.yaml](https://github.com/erhanbaris/baby-sleep-track/blob/main/approach-1/vibration.yaml) file.
+If anyone is interested, they can examine the [<i class="fa fa-github" aria-hidden="true"></i>vibration.yaml](https://github.com/erhanbaris/baby-sleep-track/blob/main/approach-1/vibration.yaml) file.
 {% endcall %}
 
 **Output:**
@@ -100,7 +100,7 @@ At first, we had placed the device under the crib, but due to my wife's concern,
 Here is the **ESPHome** integration code:
 
 {% call info() %}
-If anyone is interested, they can examine the [{% call fontawesome('fab', 'github') %}{% endcall %}ultrasonic.yaml](https://github.com/erhanbaris/baby-sleep-track/blob/main/approach-2/ultrasonic.yaml) file.
+If anyone is interested, they can examine the [<i class="fa fa-github" aria-hidden="true"></i>ultrasonic.yaml](https://github.com/erhanbaris/baby-sleep-track/blob/main/approach-2/ultrasonic.yaml) file.
 {% endcall %}
 
 More flexible and useful integrations can be made using **C++** within **ESPHome**. There is a lot of information and examples on this subject on the website.
@@ -168,7 +168,7 @@ Getting the **rtsp** address was a bit difficult, this information can be obtain
 **OpenCV** has facial recognition, but the results were not very consistent. The best solution I could find for my needs was **Google MediaPipe**[^6]</sup>. It can easily detect facial features with face mesh.
 
 {% call info() %}
-If anyone is interested, they can check out [{% call fontawesome('fab', 'github') %}{% endcall %} third method folder](https://github.com/erhanbaris/baby-sleep-track/blob/main/approach-3).
+If anyone is interested, they can check out [<i class="fa fa-github" aria-hidden="true"></i> third method folder](https://github.com/erhanbaris/baby-sleep-track/blob/main/approach-3).
 {% endcall %}
 
 <figure>
@@ -218,7 +218,7 @@ Among three different approaches, I decided that facial recognition was the best
 <br>
 
 {% call info() %}
-You can access the full source code of the project [{% call fontawesome('fab', 'github') %}{% endcall %}here](https://github.com/erhanbaris/baby-sleep-track/).
+You can access the full source code of the project [<i class="fa fa-github" aria-hidden="true"></i>here](https://github.com/erhanbaris/baby-sleep-track/).
 {% endcall %}
 
 <hr />
@@ -233,7 +233,7 @@ I developed a small **script** to monitor the baby's sleep status from the iPhon
 </figure>
 
 {% call info() %}
-If anyone is interested, they can examine the [{% call fontawesome('fab', 'github') %}{% endcall %}BabySleepTracker.js](https://github.com/erhanbaris/baby-sleep-track/blob/main/bonus/BabySleepTracker.js) file.
+If anyone is interested, they can examine the [<i class="fa fa-github" aria-hidden="true"></i>BabySleepTracker.js](https://github.com/erhanbaris/baby-sleep-track/blob/main/bonus/BabySleepTracker.js) file.
 {% endcall %}
 
 <hr />

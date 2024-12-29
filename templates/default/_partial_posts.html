@@ -2,7 +2,7 @@
   <ul class="flex flex-col divide-y divide-slate-200">
     {%- for post in posts %}
     <li class="group cursor-pointer hover:bg-neutral-50 active:bg-neutral-50">
-      <a class="block px-0 md:px-6 py-4 text-inherit" href="{{ post_url(post.lang, post.slug) }}">
+      <a class="block px-0 md:px-6 py-4 text-inherit" href="{{ post_url(post.slug) }}">
         <div class="summary flex flex-row gap-8 text-slate-700">
           <div class="flex flex-1 flex-col gap-2">
             <time class="text-xs text-slate-500 ">{{ post.date | formatdatetime("%B %d, %Y") }}</time>

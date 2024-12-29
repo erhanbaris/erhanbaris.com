@@ -19,11 +19,10 @@ contacts:
     address: https://www.linkedin.com/in/ruslan-asenov/
 
 reading:
-  name: Iron Gold
-  series_name: "Red Rising Saga #4"
-  author: Pierce Brown
-  image : https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1716325988i/33257757.jpg
-  link: https://www.goodreads.com/book/show/33257757-iron-gold
+  name: A Philosophy of Software Design
+  author: John Ousterhout
+  image : https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1531857377i/39996759.jpg
+  link: https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design
 
 projects:
   - name: Timug Static Page Generator
@@ -44,9 +43,14 @@ navs:
     link: /
   - name: Posts
     link: /posts.html
+  - name: Books
+    link: /books.html
   - name: About me
     link: /about.html
 
+analytics:
+  google-analytics: G-FE6HMW9ZE5
+  microsoft-clarity: pgw1ruvtk1
 
 stats:
-    link: https://timug-page-infos-2.erhanbaris.workers.dev/
+  link: https://timug-page-infos.erhanbaris.workers.dev/
